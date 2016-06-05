@@ -402,7 +402,7 @@ public class Ruling extends Line2D.Float {
         Collections.sort(lines, new Comparator<Ruling>() {
             @Override
             public int compare(Ruling a, Ruling b) {
-                return (int) (!Utils.feq(a.getPosition(), b.getPosition()) ? a.getPosition() - b.getPosition() : a.getStart() - b.getStart());
+                return (int) (a.vertical() ? a.getPosition() - b.getPosition() : a.getStart() - b.getStart());
             }
         });
         
